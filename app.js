@@ -38,14 +38,16 @@ function formatTime(sec) {
   const s = String(sec % 60).padStart(2,'0');
   return `${h}:${m}:${s}`;
 }
-
 function saveBillingSession(docId, seconds) {
-  const doc = findDoc(docId);
-  const clientId = doc ? doc.clientId : null;
-  const log = JSON.parse(localStorage.getItem('billingSessions') || '[]');
-  log.push({ docId, clientId, seconds, timestamp: new Date().toISOString() });
-  localStorage.setItem('billingSessions', JSON.stringify(log));
+  if (typeof window !== "undefined" && window.localStorage) {
+    const doc = findDoc(docId);
+    const clientId = doc ? doc.clientId : null;
+    const log = JSON.parse(localStorage.getItem('billingSessions') || '[]');
+    log.push({ docId, clientId, seconds, timestamp: new Date().toISOString() });
+    localStorage.setItem('billingSessions', JSON.stringify(log));
+  }
 }
+
 
 // -------------------------
 // Data Stores
