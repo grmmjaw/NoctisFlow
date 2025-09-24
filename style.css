@@ -1,0 +1,189 @@
+body{font-family: -apple-system, BlinkMacSystemFont, "San Francisco", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 300;
+    margin: 0;
+}
+
+/* === Base Layout === */
+body {
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Light mode  */
+body[data-theme='light'] {
+  background: #f9fafb; /* Tailwind gray-50 */
+  color: #1f2937; /* Tailwind gray-800 */
+}
+
+/* Dark mode */
+body[data-theme='dark'] {
+  background: #191919; /* Notion-like dark */
+  color: #e5e7eb; /* Tailwind gray-200 */
+}
+
+/* === Sidebar === */
+aside {
+  transition: background 0.3s ease, border-color 0.3s ease;
+}
+body[data-theme='dark'] aside {
+  background: #202020;
+  border-color: #2a2a2a;
+}
+body[data-theme='dark'] aside button {
+  color: #d1d5db;
+}
+body[data-theme='dark'] aside button:hover {
+  background: #2a2a2a;
+}
+
+/* === Top bar === */
+header {
+  transition: background 0.3s ease, border-color 0.3s ease;
+}
+body[data-theme='dark'] header {
+  background: #202020;
+  border-color: #2a2a2a;
+}
+
+/* === Main content area === */
+main {
+  transition: background 0.3s ease, color 0.3s ease;
+}
+body[data-theme='dark'] main {
+  background: #191919 !important;
+  color: #e5e7eb;
+}
+
+/* === Panels (docs/clients/templates/settings) === */
+#leftCol {
+  transition: background 0.3s ease, border-color 0.3s ease;
+}
+body[data-theme='dark'] #leftCol {
+  background: #202020 !important;
+  border-color: #2a2a2a;
+}
+body[data-theme='dark'] #leftCol h3 {
+  color: #f3f4f6;
+}
+body[data-theme='dark'] #leftCol .text-gray-500 {
+  color: #9ca3af !important;
+}
+
+/* === Cards, lists, modals === */
+.bg-white {
+  transition: background 0.3s ease, color 0.3s ease;
+}
+body[data-theme='dark'] .bg-white {
+  background: #202020 !important;
+  color: #e5e7eb !important;
+}
+body[data-theme='dark'] .border {
+  border-color: #2a2a2a !important;
+}
+
+/* === Buttons === */
+button {
+  transition: background 0.2s ease, color 0.2s ease;
+}
+body[data-theme='dark'] button {
+  border-color: #2a2a2a;
+}
+body[data-theme='dark'] button.bg-indigo-600 {
+  background: #4f46e5; /* Keep indigo brand color */
+}
+body[data-theme='dark'] button:hover {
+  background: #2a2a2a;
+}
+
+/* === Inputs / Textareas / Selects === */
+input, textarea, select {
+  transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+body[data-theme='dark'] input,
+body[data-theme='dark'] textarea,
+body[data-theme='dark'] select {
+  background: #191919;
+  color: #f3f4f6;
+  border-color: #2a2a2a;
+}
+body[data-theme='dark'] input::placeholder,
+body[data-theme='dark'] textarea::placeholder {
+  color: #6b7280; /* muted placeholder */
+}
+
+/* === Preview pane === */
+#previewPane {
+  transition: background 0.3s ease, color 0.3s ease;
+}
+body[data-theme='dark'] #previewPane {
+  background: #191919;
+  color: #e5e7eb;
+}
+
+/* === Activity log === */
+body[data-theme='dark'] #activityLog {
+  color: #9ca3af;
+}
+
+/* === Active nav button === */
+[data-nav].active {
+  background: #e5e7eb;
+}
+body[data-theme='dark'] [data-nav].active {
+  background: #333333;
+  color: #ffffff;
+}
+
+/* Active nav button styles */
+[data-nav].active {
+  background: #e5e7eb;   /* light mode highlight */
+}
+
+body[data-theme='dark'] [data-nav].active {
+  background: #333333;   /* dark mode highlight */
+  color: #ffffff;
+}
+/* Billing Tracker */
+#billingPanel {
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Dark mode */
+body[data-theme='dark'] #billingPanel {
+  background: #191919;  /* black background */
+  color: #ffffff;       /* white text for contrast */
+}
+.assistant-message {
+  padding: 8px;
+  border-radius: 4px;
+  margin-bottom: 8px;
+  background-color: var(--assistant-bg);
+  color: var(--assistant-text);
+}
+#assistantOutput {
+  padding: 10px;
+  border-radius: 4px;
+  max-height: 300px; /* optional scroll */
+  overflow-y: auto;
+  background-color: var(--assistant-bg); /* container background */
+  color: var(--assistant-text); /* default text */
+}
+
+
+.assistant-disclaimer {
+  font-weight: bold;
+  color: var(--assistant-disclaimer-text);
+}
+
+
+body[data-theme="light"] {
+  --assistant-bg: #f0f0f0;
+  --assistant-text: #000;
+  --assistant-disclaimer-text: #ff0404;
+}
+
+body[data-theme="dark"] {
+  --assistant-bg: #2b2b2b;
+  --assistant-text: #fff;
+  --assistant-disclaimer-text: #ff6666;
+}
+
